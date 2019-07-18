@@ -473,8 +473,8 @@
  *
  * *** IT IS HIGHLY RECOMMENDED TO LEAVE THIS OPTION ENABLED! ***
  */
-#define PREVENT_COLD_EXTRUSION
-#define EXTRUDE_MINTEMP 170
+//#define PREVENT_COLD_EXTRUSION      // Alex: disabled for testing comfort
+//#define EXTRUDE_MINTEMP 170         // Alex: disabled for testing comfort
 
 /**
  * Prevent a single extrusion longer than EXTRUDE_MAXLENGTH.
