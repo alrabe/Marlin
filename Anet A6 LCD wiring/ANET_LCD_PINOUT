@@ -1,0 +1,21 @@
+Pin layout of the original Anet A6 LCD and J3 connectors
+
+LCD connector:
+
+1 (GND) Ground --------------------2 (5V) +5V
+3 (D16) LCD_PINS_RS -----------4 (D33) BTN_EN2
+5 (D17) LCD_PINS_ENABLE ----6 (D31) BTN_EN1
+7 N/C ----------------------------------8 (D35) BTN_ENC
+9 (D23) LCD_PINS_D4 -----------10 (D37) BEEPER_PIN
+
+The J3 connector doesn't actually do much as most of it's functions are for a part which isn't included on the A6 LCD board (either an SD card reader or a bluetooth module I'm not sure). It only really connects the reset button and I don't even think the 5V and GND connections are required for this plug but I connected them up anyway.
+
+J3 connector:
+
+1 N/C ----------------2 N/C
+3 N/C ----------------4 (5V) +5V
+5 N/C ----------------6 N/C
+7 (D41) RESET ---8 (GND) Ground
+9 N/C ---------------10 N/C
+
+N/C = Not Connected
