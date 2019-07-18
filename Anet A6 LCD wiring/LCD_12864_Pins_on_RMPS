@@ -1,4 +1,4 @@
-Pins on the RAMPS bord used for the genuie Anet A6 LCD:
+Pins on the RAMPS board used for the genuie Anet A6 LCD:
 
 16: LCD_PINS_RS
 17: LCD_PINS_ENABLE
