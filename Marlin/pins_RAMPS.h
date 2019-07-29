@@ -283,11 +283,11 @@
   #define RAMPS_D10_PIN    10
 #endif
 
-#define HEATER_0_PIN       RAMPS_D8_PIN        // Alex: Swapped Bed and Hotend pin for my wiring of RAMPS 1.6plus + external MOSFET for Bed!!!
+#define HEATER_0_PIN       RAMPS_D9_PIN        // Alex: Swapped pins Fan 8, Hotend 9, Bed 10!
 
-#if ENABLED(IS_RAMPS_EFB)                      // Hotend, Fan, Bed
-  #define HEATER_BED_PIN   RAMPS_D10_PIN       // Alex: Swapped Bed and Hotend pin for my wiring of RAMPS 1.6plus + external MOSFET for Bed!!!
-#elif ENABLED(IS_RAMPS_EEF)                    // Hotend, Hotend, Fan
+#if ENABLED(IS_RAMPS_EFB)                      
+  #define HEATER_BED_PIN   RAMPS_D10_PIN       // Alex: Swapped pins Fan 8, Hotend 9, Bed 10!
+#elif ENABLED(IS_RAMPS_EEF)                    
   #define HEATER_1_PIN     RAMPS_D9_PIN
 #elif ENABLED(IS_RAMPS_EEB)                    // Hotend, Hotend, Bed
   #define HEATER_1_PIN     RAMPS_D9_PIN
@@ -304,14 +304,14 @@
 #endif
 
 #ifndef FAN_PIN
-  #if ENABLED(IS_RAMPS_EFB) || ENABLED(IS_RAMPS_EFF)  // Hotend, Fan, Bed or Hotend, Fan, Fan
-    #define FAN_PIN        RAMPS_D9_PIN
-  #elif ENABLED(IS_RAMPS_EEF) || ENABLED(IS_RAMPS_SF) // Hotend, Hotend, Fan or Spindle, Fan
+  #if ENABLED(IS_RAMPS_EFB) || ENABLED(IS_RAMPS_EFF)
+    #define FAN_PIN        RAMPS_D8_PIN               // Alex: Swapped pins Fan 8, Hotend 9, Bed 10!
+  #elif ENABLED(IS_RAMPS_EEF) || ENABLED(IS_RAMPS_SF) 
     #define FAN_PIN        RAMPS_D8_PIN
   #elif ENABLED(IS_RAMPS_EEB)                         // Hotend, Hotend, Bed
     #define FAN_PIN         4   // IO pin. Buffer needed
   #else                                               // Non-specific are "EFB" (i.e., "EFBF" or "EFBE")
-    #define FAN_PIN        RAMPS_D9_PIN
+    #define FAN_PIN        RAMPS_D8_PIN
   #endif
 #endif
 
