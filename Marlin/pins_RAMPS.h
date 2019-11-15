@@ -283,10 +283,10 @@
   #define RAMPS_D10_PIN    10
 #endif
 
-#define HEATER_0_PIN       RAMPS_D9_PIN        // Alex: Swapped pins Fan 8, Hotend 9, Bed 10!
+#define HEATER_0_PIN       RAMPS_D8_PIN        // Alex: Swapped pins Fan 10, Hotend 8, Bed 9!
 
 #if ENABLED(IS_RAMPS_EFB)                      
-  #define HEATER_BED_PIN   RAMPS_D10_PIN       // Alex: Swapped pins Fan 8, Hotend 9, Bed 10!
+  #define HEATER_BED_PIN   RAMPS_D9_PIN       // Alex: Swapped pins Fan 10, Hotend 8, Bed 9!
 #elif ENABLED(IS_RAMPS_EEF)                    
   #define HEATER_1_PIN     RAMPS_D9_PIN
 #elif ENABLED(IS_RAMPS_EEB)                    // Hotend, Hotend, Bed
@@ -305,7 +305,7 @@
 
 #ifndef FAN_PIN
   #if ENABLED(IS_RAMPS_EFB) || ENABLED(IS_RAMPS_EFF)
-    #define FAN_PIN        RAMPS_D8_PIN               // Alex: Swapped pins Fan 8, Hotend 9, Bed 10!
+    #define FAN_PIN        RAMPS_D10_PIN               // Alex: Swapped pins Fan 10, Hotend 8, Bed 9!
   #elif ENABLED(IS_RAMPS_EEF) || ENABLED(IS_RAMPS_SF) 
     #define FAN_PIN        RAMPS_D8_PIN
   #elif ENABLED(IS_RAMPS_EEB)                         // Hotend, Hotend, Bed
