@@ -136,7 +136,7 @@
 
 // Optional custom name for your RepStrap or other custom machine
 // Displayed in the LCD "Ready" message
-#define CUSTOM_MACHINE_NAME "Schildi V8"
+#define CUSTOM_MACHINE_NAME "Schildi V10"
 
 // Define this to set a unique identifier for this printer, (Used by some programs to differentiate between machines)
 // You can use an online service to generate a random UUID. (eg http://www.uuidgenerator.net/version4)
@@ -562,7 +562,7 @@
 
 // Enable this feature if all enabled endstop pins are interrupt-capable.
 // This will remove the need to poll the interrupt pins, saving many CPU cycles.
-#define ENDSTOP_INTERRUPTS_FEATURE
+//#define ENDSTOP_INTERRUPTS_FEATURE
 
 /**
  * Endstop Noise Filter
@@ -801,7 +801,7 @@
  */
 #define X_PROBE_OFFSET_FROM_EXTRUDER 23   // X offset: -left  +right  [of the nozzle]
 #define Y_PROBE_OFFSET_FROM_EXTRUDER -23  // Y offset: -front +behind [the nozzle]
-#define Z_PROBE_OFFSET_FROM_EXTRUDER -0.4 // Z offset: -below +above  [the nozzle]
+#define Z_PROBE_OFFSET_FROM_EXTRUDER -0.36 // Z offset: -below +above  [the nozzle]
 
 // Certain types of probes need to stay away from edges
 #define MIN_PROBE_EDGE 10
@@ -900,17 +900,17 @@
 #define Z_HOME_DIR -1
 
 // @section machine - ANet A6
-#define X_BED_SIZE 222
-#define Y_BED_SIZE 222
+#define X_BED_SIZE 215
+#define Y_BED_SIZE 215
 
-#define X_MIN_POS -3
+#define X_MIN_POS -6
 #define X_MAX_POS X_BED_SIZE
 
 #define Y_MIN_POS -5
 #define Y_MAX_POS Y_BED_SIZE
 
 #define Z_MIN_POS 0
-#define Z_MAX_POS 225
+#define Z_MAX_POS 220
 
 /**
  * Software Endstops
