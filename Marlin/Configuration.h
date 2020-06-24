@@ -1758,10 +1758,10 @@
 #if ENABLED(ALBEX_CONTROLLER) 
   #define U8GLIB_SSD1306
   #define ULTIPANEL
-  #define BEEPER_PIN      31
-  #define BTN_EN1         25
-  #define BTN_EN2         27
-  #define BTN_ENC         29
+  // #define BEEPER_PIN      31
+  // #define BTN_EN1         25
+  // #define BTN_EN2         27
+  // #define BTN_ENC         29
 #endif
 
 //
