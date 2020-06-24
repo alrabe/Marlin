@@ -1121,7 +1121,7 @@
  * Add a bed leveling sub-menu for ABL or MBL.
  * Include a guided procedure if manual probing is enabled.
  */
-//#define LCD_BED_LEVELING
+#define LCD_BED_LEVELING
 
 #if ENABLED(LCD_BED_LEVELING)
   #define MBL_Z_STEP 0.025    // Step size while manually probing Z axis.
@@ -1754,7 +1754,15 @@
 //
 // SSD1306 OLED full graphics generic display
 //
-//#define U8GLIB_SSD1306
+#define ALBEX_CONTROLLER
+#if ENABLED(ALBEX_CONTROLLER) 
+  #define U8GLIB_SSD1306
+  #define ULTIPANEL
+  #define BEEPER_PIN      31
+  #define BTN_EN1         25
+  #define BTN_EN2         27
+  #define BTN_ENC         29
+#endif
 
 //
 // SAV OLEd LCD module support using either SSD1306 or SH1106 based LCD modules
@@ -1794,7 +1802,7 @@
 //
 // ANET and Tronxy Graphical Controller
 //
-#define ANET_FULL_GRAPHICS_LCD    // Anet 128x64 full graphics lcd with rotary encoder as used on Anet A6
+//#define ANET_FULL_GRAPHICS_LCD    // Anet 128x64 full graphics lcd with rotary encoder as used on Anet A6
                                   // A clone of the RepRapDiscount full graphics display but with
                                   // different pins/wiring (see pins_ANET_10.h).
 
