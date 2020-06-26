@@ -541,7 +541,7 @@
     #else
 
       // Beeper on AUX-4
-      #define BEEPER_PIN        33
+      #define BEEPER_PIN        31
 
       // Buttons are directly attached using AUX-2
       #if ENABLED(REPRAPWORLD_KEYPAD)
@@ -556,9 +556,9 @@
         #define BTN_EN2         63   // AUX2 PIN 4
         #define BTN_ENC         49   // AUX3 PIN 7
       #else
-        #define BTN_EN1         37
-        #define BTN_EN2         35
-        #define BTN_ENC         31
+        #define BTN_EN1         25
+        #define BTN_EN2         27
+        #define BTN_ENC         29
       #endif
 
       #if ENABLED(G3D_PANEL)
