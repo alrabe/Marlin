@@ -123,7 +123,7 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
-#define BAUDRATE 115200
+#define BAUDRATE 200000
 
 // Enable the Bluetooth serial interface on AT90USB devices
 //#define BLUETOOTH
@@ -136,7 +136,7 @@
 
 // Optional custom name for your RepStrap or other custom machine
 // Displayed in the LCD "Ready" message
-#define CUSTOM_MACHINE_NAME "Schildi V10"
+#define CUSTOM_MACHINE_NAME "Schildi V11"
 
 // Define this to set a unique identifier for this printer, (Used by some programs to differentiate between machines)
 // You can use an online service to generate a random UUID. (eg http://www.uuidgenerator.net/version4)
@@ -452,7 +452,7 @@
  * *** IT IS HIGHLY RECOMMENDED TO LEAVE THIS OPTION ENABLED! ***
  */
 #define PREVENT_COLD_EXTRUSION
-#define EXTRUDE_MINTEMP 170
+#define EXTRUDE_MINTEMP 180
 
 /**
  * Prevent a single extrusion longer than EXTRUDE_MAXLENGTH.
@@ -622,7 +622,7 @@
 
 // ANET A6 Firmware V2.0 defaults (Vmax):
 // Vmax x: 400, Vmax y: 400, Vmax z: 4, Vmax e: 25
-#define DEFAULT_MAX_FEEDRATE          {400, 400, 4, 25}
+#define DEFAULT_MAX_FEEDRATE          {400, 400, 4, 45}
 //#define DEFAULT_MAX_FEEDRATE          {400, 400, 20, 50}
 
 
@@ -900,17 +900,17 @@
 #define Z_HOME_DIR -1
 
 // @section machine - ANet A6
-#define X_BED_SIZE 215
-#define Y_BED_SIZE 215
+#define X_BED_SIZE 210
+#define Y_BED_SIZE 210
 
-#define X_MIN_POS -6
-#define X_MAX_POS X_BED_SIZE
+#define X_MIN_POS 20
+#define X_MAX_POS 195
 
-#define Y_MIN_POS -5
-#define Y_MAX_POS Y_BED_SIZE
+#define Y_MIN_POS 20
+#define Y_MAX_POS 190
 
 #define Z_MIN_POS 0
-#define Z_MAX_POS 220
+#define Z_MAX_POS 210
 
 /**
  * Software Endstops
@@ -938,7 +938,7 @@
 #endif
 
 #if ENABLED(MIN_SOFTWARE_ENDSTOPS) || ENABLED(MAX_SOFTWARE_ENDSTOPS)
-  //#define SOFT_ENDSTOPS_MENU_ITEM  // Enable/Disable software endstops from the LCD
+  #define SOFT_ENDSTOPS_MENU_ITEM  // Enable/Disable software endstops from the LCD
 #endif
 
 /**
