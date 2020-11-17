@@ -136,7 +136,7 @@
 
 // Optional custom name for your RepStrap or other custom machine
 // Displayed in the LCD "Ready" message
-#define CUSTOM_MACHINE_NAME "Schildi V12"
+#define CUSTOM_MACHINE_NAME "Schildi V13"
 
 // Define this to set a unique identifier for this printer, (Used by some programs to differentiate between machines)
 // You can use an online service to generate a random UUID. (eg http://www.uuidgenerator.net/version4)
@@ -379,9 +379,9 @@
 
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
   // Kp: 16.81 Ki: 1.04 Kd: 68.17
-  #define DEFAULT_Kp 16.81
-  #define DEFAULT_Ki 1.04
-  #define DEFAULT_Kd 68.17
+  #define DEFAULT_Kp 14.64
+  #define DEFAULT_Ki 0.90
+  #define DEFAULT_Kd 59.34
 
 #endif // PIDTEMP
 
@@ -622,7 +622,7 @@
 
 // ANET A6 Firmware V2.0 defaults (Vmax):
 // Vmax x: 400, Vmax y: 400, Vmax z: 4, Vmax e: 25
-#define DEFAULT_MAX_FEEDRATE          {400, 400, 4, 45}
+#define DEFAULT_MAX_FEEDRATE          {400, 400, 15, 45}
 //#define DEFAULT_MAX_FEEDRATE          {400, 400, 20, 50}
 
 
@@ -801,7 +801,7 @@
  */
 #define X_PROBE_OFFSET_FROM_EXTRUDER 28 // X offset: -left  +right  [of the nozzle]
 #define Y_PROBE_OFFSET_FROM_EXTRUDER -16 // Y offset: -front +behind [the nozzle]
-#define Z_PROBE_OFFSET_FROM_EXTRUDER 1 // Z offset: -below +above  [the nozzle]
+#define Z_PROBE_OFFSET_FROM_EXTRUDER -1 // Z offset: -below +above  [the nozzle]
 
 // Certain types of probes need to stay away from edges
 #define MIN_PROBE_EDGE 0
@@ -813,7 +813,7 @@
 #define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
 
 // Feedrate (mm/m) for the "accurate" probe of each point
-#define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 3)
+#define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 6)
 
 // The number of probes to perform at each point.
 //   Set to 2 for a fast/slow probe, using the second probe result.
@@ -842,11 +842,11 @@
 #define Z_PROBE_LOW_POINT          -1 // Farthest distance below the trigger-point to go before stopping
 
 // For M851 give a range for adjusting the Z probe offset
-#define Z_PROBE_OFFSET_RANGE_MIN -7
-#define Z_PROBE_OFFSET_RANGE_MAX 7
+#define Z_PROBE_OFFSET_RANGE_MIN -3
+#define Z_PROBE_OFFSET_RANGE_MAX 3
 
 // Enable the M48 repeatability test to test probe accuracy
-//#define Z_MIN_PROBE_REPEATABILITY_TEST
+#define Z_MIN_PROBE_REPEATABILITY_TEST
 
 // For Inverting Stepper Enable Pins (Active Low) use 0, Non Inverting (Active High) use 1
 // :{ 0:'Low', 1:'High' }
@@ -900,15 +900,15 @@
 #define Z_HOME_DIR -1
 
 // @section machine - ANet A6
-#define X_BED_SIZE 220
+#define X_BED_SIZE 192
 #define Y_BED_SIZE 220
 
-#define X_MIN_POS 0
-#define X_MAX_POS 220
-#define Y_MIN_POS 0
+#define X_MIN_POS -2
+#define X_MAX_POS 190
+#define Y_MIN_POS -2
 #define Y_MAX_POS 220
 #define Z_MIN_POS 0
-#define Z_MAX_POS 210
+#define Z_MAX_POS 240
 
 /**
  * Software Endstops
@@ -1031,17 +1031,17 @@
   #if ENABLED(G26_MESH_VALIDATION)
     #define MESH_TEST_NOZZLE_SIZE    0.4  // (mm) Diameter of primary nozzle.
     #define MESH_TEST_LAYER_HEIGHT   0.2  // (mm) Default layer height for the G26 Mesh Validation Tool.
-    #define MESH_TEST_HOTEND_TEMP  200.0  // (°C) Default nozzle temperature for the G26 Mesh Validation Tool.
-    #define MESH_TEST_BED_TEMP      60.0  // (°C) Default bed temperature for the G26 Mesh Validation Tool.
+    #define MESH_TEST_HOTEND_TEMP  225.0  // (°C) Default nozzle temperature for the G26 Mesh Validation Tool.
+    #define MESH_TEST_BED_TEMP      80.0  // (°C) Default bed temperature for the G26 Mesh Validation Tool.
   #endif
 
 #endif
 
 // ANET A6
-//#define MIN_PROBE_X 0
-//#define MAX_PROBE_X 165
-//#define MIN_PROBE_Y 20
-//#define MAX_PROBE_Y 190
+#define MIN_PROBE_X 0
+#define MAX_PROBE_X 185
+#define MIN_PROBE_Y 20
+#define MAX_PROBE_Y 215
 
 #if ENABLED(AUTO_BED_LEVELING_LINEAR) || ENABLED(AUTO_BED_LEVELING_BILINEAR)
 
@@ -1050,7 +1050,7 @@
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
   
  
-  #define LEFT_PROBE_BED_POSITION 30
+  #define LEFT_PROBE_BED_POSITION 10
   #define RIGHT_PROBE_BED_POSITION 185
   #define FRONT_PROBE_BED_POSITION 20
   #define BACK_PROBE_BED_POSITION 200
@@ -1084,8 +1084,8 @@
 
   #define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
 
-  #define MESH_INSET 1              // Set Mesh bounds as an inset region of the bed
-  #define GRID_MAX_POINTS_X 4       // Don't use more than 15 points per axis, implementation limited.
+  #define MESH_INSET 0              // Set Mesh bounds as an inset region of the bed
+  #define GRID_MAX_POINTS_X 10      // Don't use more than 15 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   #define UBL_MESH_EDIT_MOVES_Z     // Sophisticated users prefer no movement of nozzle
@@ -1113,12 +1113,12 @@
  * Override if the automatically selected points are inadequate.
  */
 #if ENABLED(AUTO_BED_LEVELING_3POINT) || ENABLED(AUTO_BED_LEVELING_UBL)
-  //#define PROBE_PT_1_X 15
-  //#define PROBE_PT_1_Y 180
-  //#define PROBE_PT_2_X 15
-  //#define PROBE_PT_2_Y 20
-  //#define PROBE_PT_3_X 170
-  //#define PROBE_PT_3_Y 20
+  #define PROBE_PT_1_X 10
+  #define PROBE_PT_1_Y 205
+  #define PROBE_PT_2_X 10
+  #define PROBE_PT_2_Y 25
+  #define PROBE_PT_3_X 175
+  #define PROBE_PT_3_Y 25
 #endif
 
 /**
@@ -1191,7 +1191,7 @@
 
 // Homing speeds (mm/m)
 #define HOMING_FEEDRATE_XY (50*60)
-#define HOMING_FEEDRATE_Z  (4*60)
+#define HOMING_FEEDRATE_Z  (8*60)
 
 // @section calibrate
 
